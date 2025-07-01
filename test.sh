@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+python3 test.py driving_udacity --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --num_previous_frames 2 --test --save_logg_path pretrained_models/LTFed_DRIVING-UDACITY_GAIA/ring --test_method use_ground-truth
+python3 test.py driving_carla --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --num_previous_frames 10 --test --save_logg_path pretrained_models/LTFed_DRIVING-CARLA_GAIA/ring --test_method use_ground-truth
+python3 test.py driving_gazebo --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --num_previous_frames 10 --test --save_logg_path pretrained_models/LTFed_DRIVING-GAZEBO_GAIA/ring --test_method use_ground-truth

@@ -1,0 +1,4 @@
+# ## DFL Training with gaia
+python main.py driving_udacity --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --log_freq 100 --local_steps 1 --lr 0.0005 --decay sqrt --num_previous_frames 2
+# python main.py driving_carla --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --log_freq 100 --local_steps 1 --lr 0.01 --decay sqrt --num_previous_frames 10
+# python main.py driving_gazebo --temporal --fl --network_name gaia --architecture ring --model LTFed --n_rounds 1200 --bz_train 16 --bz_test 16 --device cuda --log_freq 100 --local_steps 1 --lr 0.01 --decay sqrt --num_previous_frames 10
