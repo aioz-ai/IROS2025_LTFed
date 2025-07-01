@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Lightweight Temporal Transformer Decomposition for Federated Autonomous Driving.">
+  <meta name="keywords" content="X-ray, 3D Shape Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightweight Temporal Transformer Decomposition for Federated Autonomous Driving</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/aioz.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Lightweight Temporal Transformer Decomposition for Federated Autonomous Driving</h1>
+          <div class="is-size-5 publication-authors">
+			<span class="author-block">
+              <a href="https://scholar.google.com/citations?user=qCcSKkMAAAAJ&hl=en">Tuong Do</a><sup>1,2,3</sup>,
+            </span>
+			<span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KU9vgMcAAAAJ&hl=en">Binh X.guyen</a><sup>2</sup>,
+            </span>
+			<span class="author-block">
+              <a href="https://sg.linkedin.com/in/erman-tjiputra">Erman Tjiputra</a><sup>2</sup>,
+            </span>
+			<span class="author-block">
+              <a href="https://scholar.google.com/citations?user=DbAThEgAAAAJ&hl=en">Quang D. Tran</a><sup>1,2</sup>,
+            </span>
+			<span class="author-block">
+              <a href="https://scholar.google.com.tw/citations?user=rkhWIKoAAAAJ&hl=zh-TW">Te-Chuan Chiu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cgi.csc.liv.ac.uk/~anguyen/">Anh Nguyen</a><sup>1</sup>
+            </span>
+          </div>
+      <!--/ Intro Image. -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><b>University of Liverpool, UK</b></span><br />
+			<span class="author-block"><sup>2</sup><b>AIOZ, Singapore</b></span><br />
+            <span class="author-block"><sup>3</sup><b>National Tsing Hua University, Taiwan</b></span><br />
+          </div>
+
+          <div class=" is-centered has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2506.23523"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. 
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/aioz-ai/IROS2025_LTFed"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Source</span>
+                  </a>
+              </span> 
+              <!-- Video. -->
+              <!--<span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>-->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+		<div class="column is-four-fifths">
+									<div class="publication-video">
+								<video src="static/figures/Demo.mp4" type="video/mp4" controls></video>
+							</div>
+			<h2 class="title is-3">Abstract</h2>
+				<div class="content has-text-justified">
+					Traditional vision-based autonomous driving systems often face difficulties in navigating complex environments when relying solely on single-image inputs. To overcome this limitation, incorporating temporal data such as past image frames or steering sequences, has proven effective in enhancing robustness and adaptability in challenging scenarios. While previous high-performance methods exist, they often rely on resource-intensive fusion networks, making them impractical for training and unsuitable for federated learning. To address these challenges, we propose lightweight temporal transformer decomposition, a method that processes sequential image frames and temporal steering data by breaking down large attention maps into smaller matrices. This approach reduces model complexity, enabling efficient weight updates for convergence and real-time predictions while leveraging temporal information to enhance autonomous driving performance. Intensive experiments on three datasets demonstrate that our method outperforms recent approaches by a clear margin while achieving real-time performance. Additionally, real robot experiments further confirm the effectiveness of our method.   
+				</div>
+		</div>
+    </div>
+    
+
+	
+	<section class="section">
+		<div class="container ">
+        <!-- Dataset. -->
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title">Problem Statement</h2>
+            <div class="content has-text-justified">
+            To address data privacy, several autonomous driving approaches utilize federated learning to train decentralized models across multiple vehicles. However, most autonomous driving models still rely on single-frame inputs and develop relatively simple networks to enable feasible training in a federated learning setup. This single-frame approach overlooks the temporal data that each vehicle collects over time, which can provide essential context for understanding motion patterns, tracking objects, and anticipating potential hazards. As a result, these models do not fully leverage the sequence of information needed to better predict and respond to dynamic driving scenarios, ultimately limiting their performance and adaptability.
+
+			In this paper, our goal is to develop a federated autonomous driving framework that incorporates temporal information as input. To address the complexity and learning challenges of the fusion model when training in a federated scenario using temporal information, we propose a Lightweight Temporal Transformer, a new approach designed to reduce the complexity of the network in each silo by efficiently approximating the information from the inputs. Our method utilizes a decomposition method under unitary attention to break down learnable attention maps into low-rank ones, ensuring that the resulting models remain lightweight and trainable. By reducing model complexity, our approach enables the network to use temporal data while ensuring convergence. Intensive experiments demonstrate that our approach significantly improves performance over state-of-the-art methods in federated autonomous driving.
+			
+			The figure below shows the comparison between traditional single-frame solutions for federated autonomous driving (a) and our lightweight temporal transformer network to enhance the training feasibility in federated learning setup (b).
+			</div>
+				<section class="section">
+				  <!-- Paper video. -->
+					<div class="columns is-centered has-text-centered">
+						<div class="column is-four-fifths">
+						<div class="publication-video">
+							<img src="static/figures/Intro.png" alt="cars peace"/>
+						</div>
+						</div>
+					</div>   
+				</section> 
+			<h2 class="title">Methodology</h2>
+            <div class="content has-text-justified">
+              Apart from X-ray images collected from our real robot, we also collect an EISimulation dataset from the CathSim simulator for simulated X-ray images. We manually label both data from the robot and CathSim simulator to use them in downstream tasks. We note that the datasets used to train the foundation model are not being used in downstream endovascular understanding tasks.We propose a Lightweight Temporal Transformer Decomposition method for federated autonomous driving, where a network of vehicles collaboratively trains a global driving policy by aggregating local weights from each vehicle. We minimize a local regression loss using mean squared error to predict steering angles from joint features extracted from temporally ordered RGB images and steering series. We employ unitary attention decoupling to reduce large tensors into smaller ones, followed by tensor factorization to decompose attention maps into factor matrices, ensuring our model is lightweight for real-time predictions on edge devices while preserving critical temporal information, with evaluations across three datasets confirming its effectiveness.
+			  The figure below shows an overview of our lightweight temporal transformer decomposition method for federated autonomous driving.
+			</div>
+			
+			<div class="publication-video">
+				<img src="static/figures/proposal.png" alt="cars peace"/>
+			</div>
+			<h2 class="title">Experiments</h2>
+            <div class="content has-text-justified">
+              Table below shows a comparison between our approach and state-of-the-art methods, both with and without temporal information. The results demonstrate a clear performance advantage, as our method achieves notably lower RMSE and MAE across all three datasets: Udacity+, Carla, and Gazebo. 
+			</div>
+			
+			<table border="1" cellspacing="0" cellpadding="4">
+			  <caption><strong>Performance comparison between different methods. The Gaia topology is used. RMSE is used as bechmarking metric.</strong></caption>
+			  <thead>
+				<tr>
+				  <th>Method</th>
+				  <th>Udacity+</th>
+				  <th>Gazebo</th>
+				  <th>Carla</th>
+				  <th>#Params (M)</th>
+				  <th>Avg. Cycle Time (ms)</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr><td>MobileNet</td><td>0.193</td><td>0.083</td><td>0.286</td><td>2.22</td><td>–</td></tr>
+				<tr><td>DroNet</td><td>0.183</td><td>0.082</td><td>0.333</td><td>0.31</td><td>–</td></tr>
+				<tr><td>St-p3</td><td>0.092</td><td>0.071</td><td>0.132</td><td>1247.87</td><td>–</td></tr>
+				<tr><td>ADD</td><td>0.097</td><td>0.049</td><td>0.166</td><td>3234.22</td><td>–</td></tr>
+				<tr><td>HPO</td><td>0.088</td><td>0.044</td><td>0.157</td><td>5990.19</td><td>–</td></tr>
+				<tr><td>FedAvg</td><td>0.212</td><td>0.094</td><td>0.269</td><td>0.31</td><td>152.4</td></tr>
+				<tr><td>FedProx</td><td>0.152</td><td>0.077</td><td>0.226</td><td>0.31</td><td>111.5</td></tr>
+				<tr><td>STAR</td><td>0.179</td><td>0.062</td><td>0.208</td><td>0.31</td><td>299.9</td></tr>
+				<tr><td>FedTSE</td><td>0.144</td><td>0.063</td><td>0.079</td><td>89.1</td><td>1172</td></tr>
+				<tr><td>TGCN</td><td>0.137</td><td>0.069</td><td>0.193</td><td>78.33</td><td>224</td></tr>
+				<tr><td>Fed-STGRU</td><td>0.129</td><td>0.059</td><td>0.151</td><td>91.01</td><td>370</td></tr>
+				<tr><td>BFRT</td><td>0.113</td><td>0.054</td><td>0.111</td><td>427.26</td><td>1256</td></tr>
+				<tr><td>MFL</td><td>0.108</td><td>0.052</td><td>0.133</td><td>173.87</td><td>781</td></tr>
+				<tr><td>CDL</td><td>0.141</td><td>0.062</td><td>0.183</td><td>0.63</td><td>72.7</td></tr>
+				<tr><td>MATCHA</td><td>0.182</td><td>0.069</td><td>0.208</td><td>0.31</td><td>171.3</td></tr>
+				<tr><td>MBST</td><td>0.183</td><td>0.072</td><td>0.214</td><td>0.31</td><td>82.1</td></tr>
+				<tr><td>FADNet</td><td>0.162</td><td>0.069</td><td>0.203</td><td>0.32</td><td>62.6</td></tr>
+				<tr><td>PriRec</td><td>0.137</td><td>0.066</td><td>0.196</td><td>325.57</td><td>272</td></tr>
+				<tr><td>PEPPER</td><td>0.124</td><td>0.055</td><td>0.115</td><td>89.13</td><td>438</td></tr>
+				<tr><td><strong>Ours (CLL)</strong></td><td><strong>0.088</strong></td><td>0.045</td><td>0.091</td><td>5.01</td><td>–</td></tr>
+				<tr><td><strong>Ours (SFL)</strong></td><td>0.107</td><td>0.049</td><td><strong>0.072</strong></td><td>5.01</td><td>180</td></tr>
+				<tr><td><strong>Ours (DFL)</strong></td><td>0.091</td><td><strong>0.043</strong></td><td>0.076</td><td>5.01</td><td>121</td></tr>
+			  </tbody>
+			</table>
+			
+
+
+
+</body>
+				</div> 
+			</div>
+			
+		</div>
+	</section>
+	
+ 
+    <section class="section" id="BibTeX">
+		<div class="container is-max-desktop content">
+			<h2 class="title">BibTeX</h2>
+			<pre><code>Soon
+			</code></pre>
+		</div>
+    </section>
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template was borrowed from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We would like to thank Keunhong Park for sharing the template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
