@@ -7,9 +7,7 @@
 
 This repository is the implementation of **Lightweight Temporal Transformer Decomposition for Federated Autonomous Driving**. We benchmark our method on three public datasets: Udacity+, Carla, and Gazebo.
 
-For the detail, please refer to [link](https://arxiv.org/abs/2506.23523).
-
-This repository is based on and inspired by @Binh X. Nguyen's [work](https://github.com/aioz-ai/CDL). We sincerely thank them for their sharing of the codes.
+For the details, please refer to [link](https://arxiv.org/abs/2506.23523).
 
 ## Summary
 
@@ -95,6 +93,8 @@ If you use this code as part of any published research, we'd really appreciate i
 ```
 coming soon!
 ```
+
+This repository is based on and inspired by @Binh X. Nguyen's [work](https://github.com/aioz-ai/CDL). We sincerely thank them for sharing the codes.
 
 ### License
 
